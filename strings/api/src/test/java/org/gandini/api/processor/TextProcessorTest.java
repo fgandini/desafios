@@ -15,11 +15,6 @@ public class TextProcessorTest {
 
     private String tenLines = "churros churros churros churros churros churros churros churros churros churros";
 
-
-    @Before
-    public void setUp() {
-    }
-
     @Test
     public void testBasicTextWithoutJustify() {
         int lineLength = 40;
@@ -35,6 +30,6 @@ public class TextProcessorTest {
         int lineLength = 10;
         TextInputObject textInputObject = new TextInputObject(tenLines, lineLength, true);
         String text = new TextProcessor(textInputObject).processText();
-        Assert.assertTrue(text.split(System.lineSeparator()).length == 10);
+        Assert.assertEquals(text.split(System.lineSeparator()).length, 10);
     }
 }

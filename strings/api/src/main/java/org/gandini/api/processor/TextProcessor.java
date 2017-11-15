@@ -18,15 +18,17 @@ public class TextProcessor {
 
     public String processText() {
         String wrapedText = wrapText();
-        if (textInputObject.justify)
+        if (textInputObject.justify) {
             return justify(wrapedText);
+        }
         return wrapedText;
     }
 
     public TextOutputObject processJson() {
         String wrapedText = wrapText();
-        if (textInputObject.justify)
+        if (textInputObject.justify) {
             wrapedText = justify(wrapedText);
+        }
         return new TextOutputObject(wrapedText.replaceAll("\"", "'"));
     }
 
@@ -116,8 +118,9 @@ public class TextProcessor {
 
     private String stringfy(List<String> lines) {
         String string = "";
-        for (String s : lines)
+        for (String s : lines) {
             string += s;
+        }
         return string;
     }
 }

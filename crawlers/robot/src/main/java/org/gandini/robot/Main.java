@@ -33,7 +33,6 @@ public class Main {
         if (args.length == 0 || !args[0].contains("config.yml")) {
             logger.error("O primeiro argumento precisa ser o caminho para o arquivo config.yml");
             System.exit(0);
-
         }
     }
 }
