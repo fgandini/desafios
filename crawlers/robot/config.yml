@@ -1,4 +1,4 @@
 apiEndpoint: "http://localhost:10000/crawler/reddit/hot"
 botName: "gandini_bot"
-token: "454195186:AAEQlgvvCa2FcjIABPLlabfVRlwC4wYfJhc"
+token:
 minimumScore: 5000
