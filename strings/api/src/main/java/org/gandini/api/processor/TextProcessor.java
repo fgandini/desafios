@@ -81,7 +81,7 @@ public class TextProcessor {
         if (porcentage < textInputObject.elasticity.get() && applyElasticity(line)) {
             return line;
         }
-        //regex para quebrar por espacos mas mantelos no vetor (pega no stackoverflow)
+        //regex para quebrar por espacos mas mante-los no vetor (pega no stackoverflow)
         String[] breakLine = line.split("((?<=\\s+)|(?=\\s+))");
         if (breakLine.length == 1 || !line.contains(" ")) {
             return stringfy(breakLine);

@@ -15,21 +15,38 @@ public class TextProcessorTest {
 
     private String tenLines = "churros churros churros churros churros churros churros churros churros churros";
 
+    private String justifyText = "aaaaa aaaa a aa aa aa a aa aaa a";
+
     @Test
     public void testBasicTextWithoutJustify() {
         int lineLength = 40;
-        TextInputObject textInputObject = new TextInputObject(basicText, lineLength, true);
+        int expectedNumLines = 13;
+        TextInputObject textInputObject = new TextInputObject(basicText, lineLength, false);
         String text = new TextProcessor(textInputObject).processText();
         for (String line : text.split(System.lineSeparator())) {
             Assert.assertTrue(line.length() <= lineLength);
         }
+        Assert.assertEquals(text.split(System.lineSeparator()).length, expectedNumLines);
+    }
+
+    @Test
+    public void testBasicTextJustify() {
+        int lineLength = 10;
+        int expectedNumLines = 3;
+        TextInputObject textInputObject = new TextInputObject(justifyText, lineLength, true);
+        String text = new TextProcessor(textInputObject).processText();
+        for (String line : text.split(System.lineSeparator())) {
+            Assert.assertTrue(line.length() <= lineLength);
+        }
+        Assert.assertEquals(text.split(System.lineSeparator()).length, expectedNumLines);
     }
 
     @Test
     public void testTenLinesTextMinimunlineLength() {
         int lineLength = 10;
+        int expectedNumLines = 10;
         TextInputObject textInputObject = new TextInputObject(tenLines, lineLength, true);
         String text = new TextProcessor(textInputObject).processText();
-        Assert.assertEquals(text.split(System.lineSeparator()).length, 10);
+        Assert.assertEquals(text.split(System.lineSeparator()).length, expectedNumLines);
     }
 }
