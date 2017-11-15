@@ -1,0 +1,16 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 10000
+  adminConnectors:
+    - type: http
+      port: 10001
+
+redditURL: "https://www.reddit.com"
+
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      threshold: INFO
+      logFormat: '%-6level [%d{yyyy-MM-dd HH:mm:ss.SSS}] [thread:%thread] %logger{5} - %X{code} %msg %n'

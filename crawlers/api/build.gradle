@@ -1,0 +1,13 @@
+dependencies {
+    compile project(':domain')
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.1'
+}
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "crawlers-api",
+                "Implementation-Version": "1.0.0",
+                "Main-Class": "org.gandini.api.Main"
+        )
+    }
+}

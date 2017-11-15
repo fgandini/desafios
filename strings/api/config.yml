@@ -1,0 +1,14 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 10555
+  adminConnectors:
+    - type: http
+      port: 10556
+
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      threshold: INFO
+      logFormat: '%-6level [%d{yyyy-MM-dd HH:mm:ss.SSS}] [thread:%thread] %logger{5} - %X{code} %msg %n'

@@ -1,0 +1,9 @@
+jar {
+    manifest {
+        attributes(
+                "Implementation-Title": "string-manipulation-api",
+                "Implementation-Version": "1.0.0",
+                "Main-Class": "org.gandini.api.Main"
+        )
+    }
+}
